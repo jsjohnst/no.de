@@ -1,7 +1,7 @@
 { 
   "name" : "no.de", 
   "description" : "A deployment tool for http://no.de", 
-  "version" : "0.1", 
+  "version" : "0.0.1", 
   "homepage" : "http://jsjohnst.github.com/no.de/", 
   "author" : "Jeremy Johnstone <github+no.de@jeremyjohnstone.com> (http://www.jeremyjohnstone.com)", 
   "repository" :

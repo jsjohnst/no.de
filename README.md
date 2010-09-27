@@ -26,6 +26,9 @@ $ no.de coupons --request
 $ no.de create [hostname]
     -- creates a new no.de instance and adds a git remote named 'no.de'
 
+$ no.de bind [no.de instance id]
+    -- binds the given no.de instance to this repository (like create, but without the actual creation)
+
 $ no.de info
     -- shows information about the instance this repository is linked too
 
@@ -34,3 +37,12 @@ $ no.de deploy
 
 $ no.de open
     -- short cut alias for `open http://[your domain].no.de/`
+
+$ no.de shell
+    -- short cut alias for `ssh node@[your domain].no.de`
+
+$ no.de log
+    -- short cut alias for `ssh node@[your domain].no.de /opt/nodejs/bin/node-service-log`
+
+$ no.de help
+	-- prints out a list of commands
