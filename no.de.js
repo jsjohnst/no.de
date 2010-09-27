@@ -22,7 +22,13 @@ no_de.commands = {
 			sys.puts("New config options for API have been saved!");
 		}
 	},
-	config_sshkeys: function(path) {
+	sshkeys: function() {
+		sys.puts("Not implemented!");
+	},
+	sshkeys_add: function() {
+		sys.puts("Not implemented!");
+	},
+	sshkeys_rm: function() {
 		sys.puts("Not implemented!");
 	},
 	instances: function() {

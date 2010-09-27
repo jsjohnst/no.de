@@ -11,8 +11,14 @@ Commands
 $ no.de config --api [username] [password]
     -- used to set the username and password for your node account
 
-$ no.de config --sshkeys [optional path to ssh public key]
+$ no.de sshkeys
+    -- lists all the keys in the access list for your node account
+
+$ no.de sshkeys --add [optional path to ssh public key]
     -- adds the specified SSH public key to the access list, or uses ~/.ssh/id_[dsa|rsa].pub if not provided
+
+$ no.de sshkeys --rm [sshkey id]
+	-- removes the specified ssh key from the access list
 
 $ no.de instances
     -- lists your existing node instances and their current status

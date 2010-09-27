@@ -11,6 +11,12 @@ var method = command;
 var params = [];
 
 switch(command) {
+	case "sshkeys":
+		if(argv.length) {
+			method = method + "_" + argv.shift().substr(2);
+			params = argv;
+		}
+		break;
 	case "config":
 		method = method + "_" + argv.shift().substr(2);
 		params = argv;
