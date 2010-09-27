@@ -8,10 +8,10 @@ deployment of nodejs projects.
 Commands
 --------
 
-$ no.de config --api <username> <password>
+$ no.de config --api [username] [password]
     -- used to set the username and password for your node account
 
-$ no.de config --sshkeys [<optional path to ssh public key>]
+$ no.de config --sshkeys [optional path to ssh public key]
     -- adds the specified SSH public key to the access list, or uses ~/.ssh/id_[dsa|rsa].pub if not provided
 
 $ no.de instances
@@ -23,7 +23,7 @@ $ no.de coupons
 $ no.de coupons --request
     -- requests a new coupon code
     
-$ no.de create <hostname>
+$ no.de create [hostname]
     -- creates a new no.de instance and adds a git remote named 'no.de'
 
 $ no.de info
@@ -33,4 +33,4 @@ $ no.de deploy
     -- short cut alias for `git push no.de master`
 
 $ no.de open
-    -- short cut alias for `open http://<your domain>.no.de/`
+    -- short cut alias for `open http://[your domain].no.de/`
