@@ -1,0 +1,23 @@
+{ 
+  "name" : "no.de", 
+  "description" : "A deployment tool for http://no.de", 
+  "version" : "0.1", 
+  "homepage" : "http://jsjohnst.github.com/no.de/", 
+  "author" : "Jeremy Johnstone <github+no.de@jeremyjohnstone.com> (http://www.jeremyjohnstone.com)", 
+  "repository" :
+  	{ 
+		"type" : "git", 
+		"url" : "http://github.com/jsjohnst/no.de.git"
+  	}, 
+  "bugs" : { "web" : "http://github.com/jsjohnst/no.de/issues" }, 
+  "directories" : { "lib" : "./lib" }, 
+  "bin" : { "no.de" : "./cli.js" }, 
+  "main" : "no.de", 
+  "engines" : { "node" : ">=0.2.0" }, 
+  "licenses" :
+	[ { 
+		"type" : "BSD", 
+		"url" : "http://github.com/jsjohnst/no.de/raw/master/LICENSE"
+      }
+  	]
+}
