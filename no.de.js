@@ -82,6 +82,7 @@ no_de.commands = {
 		});
 	},
 	bind: function(id) {
+		sys.puts("Binding this git repo to no.de instance: " + id);
 		api.nodes.get(id, function(error, status, json) {
 			if(status == 200) {
 				var instanceid = json.uri.split("/").pop();
@@ -99,8 +100,44 @@ no_de.commands = {
 			}
 		});
 	},
-	create: function(hostname, coupon) {
-		sys.puts("Not implemented!");
+	create: function(subdomain, coupon, bind) {
+		if(!coupon) {
+			api.coupons.list(function(err, status, json) {
+				if(status == 200) {
+					if(json.length) {
+						var coupon = json[0].code;
+						sys.puts("Using coupon code: " + coupon + " to create new host.");
+						api.create(subdomain, coupon, function(err, status, json) {
+							if(status == 202) {
+								var instanceid = json.uri.split("/").pop();
+								sys.puts("Created no.de # " + instanceid);
+								bind && no_de.commands.bind(instanceid);
+							} else {
+								sys.puts("Unable to connect to no.de API. Try checking your credentials maybe?");
+							}
+						});
+					} else {
+						sys.puts("You have no available coupons! Try requesting one maybe?");
+						return;
+					}
+				} else {
+					sys.puts("Unable to connect to no.de API. Try checking your credentials maybe?");
+					return;
+				}
+			});
+		} else {
+			sys.puts("Using coupon code: " + coupon + " to create new host.");
+			api.create(subdomain, coupon, function(err, status, json) {
+				if(status == 202) {
+					var instanceid = json.uri.split("/").pop();
+					sys.puts("Created no.de # " + instanceid);
+					bind && no_de.commands.bind(instanceid);
+				} else {
+					sys.puts("Status: " + status);
+					sys.puts("Unable to connect to no.de API. Try checking your credentials maybe?");
+				}
+			});
+		}
 	},
 	info: function() {
 		git.get_instanceid(function(instanceid) {

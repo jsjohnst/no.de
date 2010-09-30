@@ -41,6 +41,13 @@ $ no.de log
 $ no.de help
 	-- prints out a list of commands
 
+$ no.de create [subdomain] [coupon?]
+    -- creates a new no.de instance. If coupon isn't provided, it will find an available if possible.
+
+$ no.de create --bind [subdomain] [coupon?]
+	-- creates a new no.de instance and binds it (shortcut of create + bind)
+
+
 Methods still pending implementation
 ------------------------------------	
 
@@ -53,5 +60,3 @@ Methods still pending implementation
 > no.de sshkeys --rm [sshkey id]
 	-- removes the specified ssh key from the access list
 	
-> no.de create [hostname]
-    -- creates a new no.de instance and adds a git remote named 'no.de'
